@@ -6,7 +6,7 @@ import userRouter from "./routes/user";
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-const whitelist = ["http://localhost:3000"];
+const whitelist = ["http://localhost:5173"];
 
 const corsOptions: CorsOptions = {
   origin: function (
