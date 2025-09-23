@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: colbin
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: colbinuser
+      POSTGRES_PASSWORD: colbinpass
+      POSTGRES_DB: colbindb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - colbin-network
+
+volumes:
+  pgdata:
+
+networks:
+  colbin-network:
