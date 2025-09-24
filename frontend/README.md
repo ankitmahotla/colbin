@@ -1,69 +1,89 @@
-# React + TypeScript + Vite
+# Recruitment Platform Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the recruitment platform prototype built with React, TypeScript, Vite, Tailwind CSS, shadcn/ui components, React Hook Form, and Zod for validation.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
 
-## Expanding the ESLint configuration
+- Node.js (recommended version >=16)
+- npm or yarn
+- Backend API running locally or accessible remotely
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Setup Instructions
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 1. Clone the repository
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+If frontend is within the main repo, navigate to frontend folder:
+
+```bash
+cd frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Using npm or yarn:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+or
+
+```bash
+yarn install
+```
+
+### 3. Start the development server
+
+Run:
+
+```bash
+npm run dev
+```
+
+or
+
+```bash
+yarn dev
+```
+
+The app will launch on `http://localhost:5173` or as indicated by Vite.
+
+---
+
+## Features
+
+- **User Authentication**: Registration and login with client-side validation using Zod and React Hook Form
+- **JWT Token Management**: Secure token storage and management in localStorage
+- **Protected Routes**: Profile page with authenticated API requests
+- **Modern UI**: Responsive design using Tailwind CSS and shadcn/ui components
+- **Error Handling**: Graceful error handling with toast notifications
+- **Form Validation**: Client-side validation with Zod schemas
+- **TypeScript Support**: Full TypeScript integration for type safety
+
+---
+
+## Available Scripts
+
+| Script    | Description                     |
+|-----------|---------------------------------|
+| `dev`     | Starts Vite development server |
+| `build`   | Bundles production build        |
+| `preview` | Preview production build        |
+| `lint`    | Run ESLint for code quality     |
+
+---
+
+## Technology Stack
+
+- **React 18** - Modern React with hooks and concurrent features
+- **TypeScript** - Static type checking for better development experience
+- **Vite** - Fast build tool and development server
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - High-quality, accessible UI components
+- **React Hook Form** - Performant forms with minimal re-renders
+- **Zod** - TypeScript-first schema validation
+- **Axios** - Promise-based HTTP client for API requests
