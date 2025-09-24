@@ -97,20 +97,6 @@ The server will start on `http://localhost:8000`.
 
 ---
 
-## Project Structure
-
-```
-/backend
-├─ src/                 # Backend source code
-├─ .env.example         # Example environment variables
-├─ docker-compose.yml   # Docker Compose for Postgres
-├─ package.json         # Dependencies and scripts
-└─ README.md            # Project documentation
-/frontend               # Frontend React app (if included)
-```
-
----
-
 ## Common Scripts
 
 | Script        | Description                                      |
@@ -128,4 +114,4 @@ The server will start on `http://localhost:8000`.
 - Authentication uses JWT tokens signed with `JWT_SECRET` and stored client-side.
 - Database is containerized to simplify local development and maintain consistency.
 - Ensure `bun` runtime is installed if using Bun commands.
-- Frontend setup is separate (see frontend README if applicable).
+- Frontend setup is separate (see frontend README).
